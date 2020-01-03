@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\repos\ROFuture\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\kspModReference\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,12 +43,17 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\repos\ROFuture\UnityEngine.dll</HintPath>
+      <HintPath>..\..\kspModReference\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Reactor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ROFuture.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir) "B:\ksp\RealMod\Plugins"
+copy $(TargetDir) "B:\SteamLibrary\steamapps\common\173 base\Plugins"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
